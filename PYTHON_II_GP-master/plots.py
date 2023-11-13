@@ -551,6 +551,8 @@ def weather_situation_plot(df, fig_width, fig_height):
     weather_trends = df.groupby('weathersit')['cnt'].mean().reset_index()
     weather_labels = ['Clear/Cloudy', 'Mist/Cloudy', 'Light Snow/Rain', 'Heavy Rain/Snow']
 
+    print(weather_trends)
+
     # Define colors for each weather situation
     colors = ['rgb(253, 231, 37)', 'rgb(144, 195, 32)', 'rgb(32, 144, 141)', 'rgb(70, 51, 126)']
 
@@ -563,8 +565,8 @@ def weather_situation_plot(df, fig_width, fig_height):
 
     # Update layout
     fig.update_layout(
-        title='Bike Rentals Across Different Weather Situations',
-        xaxis_title='Weather Situation',
+        title='Bike Rentals Across Different Weather Conditions',
+        xaxis_title='Weather Conditions',
         yaxis_title='Average Hourly Bike Rentals',
         width=fig_width,
         height=fig_height

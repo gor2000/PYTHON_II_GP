@@ -31,20 +31,20 @@ st.plotly_chart(p.weather_situation_plot(initial_dataset, fig_width, fig_height)
 st.markdown("""##### 🌤️☔❄️ How are bike rentals behaving in different weather conditions?
 
 **Clear/Cloudy Weather:**
-* This weather situation has the highest total number of bike rentals.
-* It seems that people are more inclined to rent bikes when the weather is clear or partly cloudy.
+* Days in Washington D.C. are in their majority within these weather conditions, with **65.67%** of total analyzed days. 
+* They too constitute the largest share of bike rentals, with **71.01%** of total rentals.
 
 **Mist/Cloudy Weather:**
-* Bike rentals decrease compared to clear/cloudy weather but are still relatively high.
-* Misty or cloudy conditions don't significantly deter people from renting bikes.
+* This less pleasent weather conditions represent **26.15%** of total observed days.
+* Bike rentals during these conditions drop slightly, and percentage of total rentals are very consistent with their sare of days with **24.27%**.
 
 **Light Snow/Rain:**
-* There is a noticeable drop in bike rentals during light snow or rain.
-* Unfavorable weather conditions seem to impact bike rental numbers.
+* These weather conditions are present for **8.17%** of total analyzed days and constitute just **4.81%** of total rentals.
+* Avg Hourly Bike Rentals are **45.56%** lower than the average for Clear/Cloudy days, showing the strong impact of weather conditions in our bike rentals.
 
 **Heavy Rain/Snow:**
-* This weather situation has the lowest bike rental numbers.
-* Heavy rain or snow substantially reduces the demand for bike rentals.
+* This weather situation has only been seen **3** days in the **2** years of our data.
+* Heavy rain or snow days only total **233** bike rentals during the analyzed period.
             
             
 **Overall, the graph suggests a correlation between weather conditions and bike rental trends, with better weather leading to increased rentals. This information can be valuable for bike rental businesses to anticipate demand based on weather forecasts.**

@@ -181,6 +181,8 @@ final_model = lgb.train(best_params,
         
 """, language='python') 
 
+st.success(""" **We have applied feature selection and the model has slightly improved using 33 features instead of 69.** """)
+
 data_metrics = {
     'Metric': ['MAE', 'MSE', 'R2'],
     'Train': [1.8979, 46.1349, 0.9109],
@@ -207,8 +209,6 @@ with col1:
 with col2:
     st.markdown("###### Best Hyperparameters")
     st.dataframe(df_hyperparameters.style.format({'Value': '{:.2f}'}).set_properties(**{'text-align': 'center'}), hide_index=True)
-
-st.markdown(""" **We have applied feature selection and the model has slightly improved using 33 features instead of 69.** """, unsafe_allow_html=True)
 
 final_model = joblib.load('./joblib_files/final_model.plk')
 
