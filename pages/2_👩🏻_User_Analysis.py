@@ -1,13 +1,15 @@
+import pickle
+
 import streamlit as st
 import plots as p
-import joblib
 
 ## Title Tab
 st.set_page_config(page_title="Users Analysis", layout='wide', page_icon='👯‍♀️')
 
 st.markdown("<h1 style='text-align: center;'>👩🏻User Analysis🧔🏼</h1>", unsafe_allow_html=True)
 
-initial_dataset = joblib.load('./joblib_files/dataset_initial.plk')
+with open("./joblib_files/dataset_initial.plk", "rb") as file:
+    initial_dataset = pickle.load(file)
 
 fig_width = 1000  # 1344 pixels
 fig_height = 600  # 576 pixels

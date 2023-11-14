@@ -1,12 +1,14 @@
+import pickle
+
 import streamlit as st
-import joblib
 import plots as p
 import plotly.graph_objects as go
 
 
 st.set_page_config(page_title="Weather & Seasons Analysis", layout="wide", page_icon='🌤️')
 
-initial_dataset = joblib.load('./joblib_files/dataset_initial.plk')
+with open("./joblib_files/dataset_initial.plk", "rb") as file:
+    initial_dataset = pickle.load(file)
 
 fig_width = 1000
 fig_height = 600
@@ -14,9 +16,12 @@ fig_height = 600
 st.markdown("<h1 style='text-align: center;'>🌤️ Weather & Seasons Analysis</h1>",unsafe_allow_html=True)
 st.markdown("---")
 
-# st.pyplot(joblib.load('./joblib_files/density.plk'))
-header_image = "Images/density.png"
-st.image(header_image, width=fig_width)
+with open("./joblib_files/density.plk", "rb") as file:
+    fig_name = pickle.load(file)
+
+st.pyplot(fig_name)
+# header_image = "Images/density.png"
+# st.image(header_image, width=fig_width)
 
 st.markdown("""##### 🌦️ How are temperature and bike rentals related?
             

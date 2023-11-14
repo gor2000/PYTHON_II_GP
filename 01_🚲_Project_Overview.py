@@ -1,10 +1,11 @@
+import pickle
+
 import streamlit as st
 import pandas as pd
 import plots as p
 import plotly as py
 import plotly.express as px
 import plotly.graph_objects as go
-import joblib
 
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
@@ -20,7 +21,8 @@ st.markdown("---")
 header_image = "Images/monuments-bike-tour.jpg"
 st.image(header_image, width=700)  # use_container_width=True makes the image fit the width of the container
 
-initial_dataset = joblib.load('./joblib_files/dataset_initial.plk')
+with open("./joblib_files/dataset_initial.plk", "rb") as file:
+    initial_dataset = pickle.load(file)
 
 # Data Description
 st.subheader(" 🏙 Project Description 🚲")

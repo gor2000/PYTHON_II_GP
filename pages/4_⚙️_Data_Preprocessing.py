@@ -1,3 +1,5 @@
+import pickle
+
 import streamlit as st
 import joblib
 import plots as p
@@ -6,7 +8,8 @@ import plotly.graph_objects as go
 
 st.set_page_config(page_title="Data Preprocessing", layout="wide", page_icon='⚙️')
 
-initial_dataset = joblib.load('./joblib_files/dataset_initial.plk')
+with open("./joblib_files/dataset_initial.plk", "rb") as file:
+    initial_dataset = pickle.load(file)
 
 fig_width = 1000
 fig_height = 600
@@ -126,7 +129,8 @@ data_outliers_handled['temp_difference'] =
         
     """, language="python")
 
-data_outliers_handled = joblib.load('./joblib_files/data_outliers.plk')
+with open("./joblib_files/data_outliers.plk", "rb") as file:
+    data_outliers_handled = pickle.load(file)
 
 st.dataframe(data_outliers_handled[['dteday', 'week_of_year', 'quarter', 'approx_daylight_duration','hr', 'holiday', 'rush_hour', 'temp', 'atemp', 'temp_difference']].head())
 
