@@ -168,7 +168,9 @@ with col2:
     st.dataframe(df_hyperparameters.style.format({'Value': '{:.2f}'}).set_properties(**{'text-align': 'center'}), hide_index=True)
 
 
-pred_test_lbm = joblib.load('./joblib_files/pred_lightgbm.plk')
+# pred_test_lbm = joblib.load('./joblib_files/pred_lightgbm.plk')
+with open('./joblib_files/pred_lightgbm.plk', "rb") as file:
+    pred_test_lbm = pickle.load(file)
 
 st.plotly_chart(p.plot_predictions(500, y_test, 'LightGBM Regressor', pred_test_lbm))
 st.markdown("---")
@@ -224,7 +226,9 @@ with col2:
     st.markdown("###### Best Hyperparameters")
     st.dataframe(df_hyperparameters.style.format({'Value': '{:.2f}'}).set_properties(**{'text-align': 'center'}), hide_index=True)
 
-final_model = joblib.load('./joblib_files/final_model.plk')
+# final_model = joblib.load('./joblib_files/final_model.plk')
+with open('./joblib_files/final_model.plk', "rb") as file:
+    final_model = pickle.load(file)
 
 st.plotly_chart(p.plot_predictions(500, y_test, 'Final Model', final_model))
 st.markdown("---")
