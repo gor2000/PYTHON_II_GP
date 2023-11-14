@@ -1,3 +1,5 @@
+import pickle
+
 import streamlit as st
 import plots as p
 import joblib
@@ -44,8 +46,15 @@ table_data = {
 }
 st.dataframe(table_data)
 
-y_test = joblib.load('./joblib_files/y_test.plk')
-pred_test_linear = joblib.load('./joblib_files/pred_linear_reg.plk')
+# y_test = joblib.load('./joblib_files/y_test.plk')
+
+with open('./joblib_files/y_test.plk', "rb") as file:
+    y_test = pickle.load(file)
+
+# pred_test_linear = joblib.load('./joblib_files/pred_linear_reg.plk')
+
+with open('./joblib_files/pred_linear_reg.plk', "rb") as file:
+    pred_test_linear = pickle.load(file)
 
 st.plotly_chart(p.plot_predictions(500, y_test, 'Linear Regression', pred_test_linear))
 
@@ -82,7 +91,10 @@ with col2:
     st.dataframe(df_hyperparameters.style.format({'Value': '{:.0f}'}).set_properties(**{'text-align': 'center'}), hide_index=True)
 
 
-pred_test_rf = joblib.load('./joblib_files/pred_random_forest.plk')
+# pred_test_rf = joblib.load('./joblib_files/pred_random_forest.plk')
+
+with open('./joblib_files/pred_random_forest.plk', "rb") as file:
+    pred_test_rf = pickle.load(file)
 
 st.plotly_chart(p.plot_predictions(500, y_test, 'Random Forest Regressor', pred_test_rf))
 st.markdown("---")
@@ -118,7 +130,10 @@ with col2:
     st.dataframe(df_hyperparameters.style.format({'Value': '{:.2f}'}).set_properties(**{'text-align': 'center'}), hide_index=True)
 
 
-pred_test_xgb = joblib.load('./joblib_files/pred_xgb.plk')
+# pred_test_xgb = joblib.load('./joblib_files/pred_xgb.plk')
+
+with open('./joblib_files/pred_xgb.plk', "rb") as file:
+    pred_test_xgb = pickle.load(file)
 
 st.plotly_chart(p.plot_predictions(500, y_test, 'XGBoost Regressor', pred_test_xgb))
 st.markdown("---")

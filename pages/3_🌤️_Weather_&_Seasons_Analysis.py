@@ -16,12 +16,12 @@ fig_height = 600
 st.markdown("<h1 style='text-align: center;'>🌤️ Weather & Seasons Analysis</h1>",unsafe_allow_html=True)
 st.markdown("---")
 
-with open("./joblib_files/density.plk", "rb") as file:
-    fig_name = pickle.load(file)
-
-st.pyplot(fig_name)
-# header_image = "Images/density.png"
-# st.image(header_image, width=fig_width)
+# with open("./joblib_files/density.plk", "rb") as file:
+#     fig_name = pickle.load(file)
+#
+# st.pyplot(fig_name)
+header_image = "Images/density.png"
+st.image(header_image, width=fig_width)
 
 st.markdown("""##### 🌦️ How are temperature and bike rentals related?
             
