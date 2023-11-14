@@ -17,7 +17,7 @@ st.markdown("<h4 style='text-align: center;'>Group Project Python II</h4>", unsa
 
 st.markdown("---")
 
-header_image = "monuments-bike-tour.jpg" 
+header_image = "Images/monuments-bike-tour.jpg" 
 st.image(header_image, width=700)  # use_container_width=True makes the image fit the width of the container
 
 initial_dataset = joblib.load('./joblib_files/dataset_initial.plk')

@@ -23,7 +23,7 @@ def main():
         "☔ Rainy Day Bicycle Plastic Roofs": {
             "Objective": "Enhance user experience during rainy days.",
             "Implementation": "Provide an optional rental service for plastic bicycle roofs on rainy days. Given that for obvious reason we see a decline of 45% average hourly rentals due to poor weather conditions, this will be an important issue to try to address. This ensures users can continue riding comfortably despite the weather, fostering a positive and reliable service image.",
-            "Images":["Solutions/Bub-up-2.jpg", "Solutions/Roofbi_4.jpg"]
+            "Images":["Images/Bub-up-2.jpg", "Images/Roofbi_4.jpg"]
         },
         "💥 Dynamic Pricing": {
             "Objective": "Optimize pricing based on demand fluctuations.",
