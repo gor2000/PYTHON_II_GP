@@ -573,10 +573,6 @@ def weather_situation_plot(df, fig_width, fig_height):
     )
 
     return fig
-    
-
-
-import plotly.graph_objects as go
 
 def plot_predictions(elements, y_test, title, pred):
     fig = go.Figure()
