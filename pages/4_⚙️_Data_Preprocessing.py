@@ -211,7 +211,10 @@ st.markdown("---")
 
 st.markdown("""### ✅ Final Processed Data Set""", unsafe_allow_html= True)   
 
-data_processed = joblib.load('./joblib_files/data_processed.plk')
+# data_processed = joblib.load('./joblib_files/data_processed.plk')
+
+with open('./joblib_files/data_processed.plk', "rb") as file:
+    data_processed = pickle.load(file)
 
 st.dataframe(data_processed.head())
 
